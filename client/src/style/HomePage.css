@@ -1,0 +1,9 @@
+.background-list {
+  display: flex;
+
+  max-width: calc(1200px + 90px);
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px auto;
+  justify-content: center;
+}

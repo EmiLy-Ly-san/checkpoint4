@@ -20,11 +20,11 @@ class CategoryRepository {
   async read(id: number) {
     // Execute the SQL SELECT query to retrieve a specific background by its ID
     const [rows] = await databaseClient.query<Rows>(
-      "select * from background where id = ?",
+      "select * from background where season_id = ?",
       [id],
     );
     // Return the first row of the result, which represents the user
-    return rows[0] as Background;
+    return rows as Background[];
   }
 
   //All backgrounds read

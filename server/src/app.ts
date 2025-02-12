@@ -63,7 +63,6 @@ app.use(express.json());
 import router from "./router";
 
 // Mount the API router under the "/api" endpoint
-app.use(router);
 
 /* ************************************************************************* */
 
@@ -99,6 +98,8 @@ if (fs.existsSync(clientBuildPath)) {
     res.sendFile("index.html", { root: clientBuildPath });
   });
 }
+
+app.use(router);
 
 /* ************************************************************************* */
 

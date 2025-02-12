@@ -22,7 +22,7 @@ class CategoryRepository {
   async read(id: number) {
     // Execute the SQL SELECT query to retrieve backgrounds by season_id
     const [rows] = await databaseClient.query<Rows>(
-      "select id, name, file, season_id from background where season_id = ?",
+      "select * from background where season_id = ?",
       [id],
     );
 
