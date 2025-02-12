@@ -16,6 +16,19 @@ create table background (
   FOREIGN KEY (season_id) REFERENCES season(id)
 );
 
+create table season (
+  id int unsigned primary key auto_increment not null,
+  name  VARCHAR(45) NOT NULL,
+);
+
+create table favorite (
+  id int unsigned primary key auto_increment not null,
+  user_id INT NOT NULL,
+  background_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (background_id) REFERENCES background(id)
+);
+
 insert into user(id, email, password)
 values
   (1, "jdoe@mail.com", "123456");
