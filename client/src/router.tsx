@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import SearchBackground from "./components/SearchBackground";
 import AddBackground from "./pages/Admin/AddBackground";
 import Admin from "./pages/Admin/Admin";
 import UpdateDeleteBackground from "./pages/Admin/UpdateDeleteBackground";
@@ -31,8 +32,9 @@ export const router = createBrowserRouter([
         path: "/admin",
         element: <Admin />,
         children: [
+          { path: "update-delete-background", element: <SearchBackground /> },
           {
-            path: "update-delete-background",
+            path: "update-delete-background/:id",
             element: <UpdateDeleteBackground />,
           },
           {
