@@ -1,6 +1,7 @@
 import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
+import type { Background } from "../background/background";
 import type { Season } from "./season";
 
 class CategoryRepository {
@@ -17,14 +18,16 @@ class CategoryRepository {
 
   // The Rs of CRUD - Read operations
 
+  // By id
   async read(id: number) {
-    // Execute the SQL SELECT query to retrieve a specific season by its ID
+    // Execute the SQL SELECT query to retrieve backgrounds by season_id
     const [rows] = await databaseClient.query<Rows>(
-      "select * from season where id = ?",
+      "select id, name, file, season_id from background where season_id = ?",
       [id],
     );
-    // Return the first row of the result, which represents the season
-    return rows[0] as Season;
+
+    // Return the first row of the result, which represents the video
+    return rows as Background[];
   }
 
   //All seasons read
