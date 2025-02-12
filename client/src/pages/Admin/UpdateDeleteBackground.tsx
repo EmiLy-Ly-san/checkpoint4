@@ -4,7 +4,7 @@ import type { Background } from "../../types/Background";
 import type { Season } from "../../types/Season";
 import useToast from "../../utils/useToastify";
 
-export default function AddBackground() {
+export default function UpdateDeleteBackground() {
   const { notifyError, notifySuccess } = useToast();
   const [seasons, setSeasons] = useState<Season[]>([]);
   const { id: backgroundId } = useParams();
@@ -73,6 +73,27 @@ export default function AddBackground() {
     }
   };
 
+  const handleDeleteVideo = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/background/${backgroundId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      if (!response.ok) {
+        throw new Error("An unknown error occurred.");
+      }
+
+      notifySuccess(`The video ${background?.name} has been removed.`);
+    } catch (err) {
+      notifyError((err as Error).message);
+    }
+  };
+
   return background ? (
     <form onSubmit={handleUpdateBackground} className="add-Background-form">
       <fieldset className="main-info-background-wrapper">
@@ -110,6 +131,13 @@ export default function AddBackground() {
           })}
         </select>
       </fieldset>
+      <section className="current-file-preview">
+        <img
+          className="current-file"
+          src={`${import.meta.env.VITE_API_URL}${background?.file}`}
+          alt="The current background."
+        />
+      </section>
       <section className="preview-image-choice">
         <label htmlFor="file">Choose a preview image</label>
         <input
@@ -122,6 +150,13 @@ export default function AddBackground() {
       <section className="form-buttons-wrapper">
         <button type="submit" className="standard-button">
           Add
+        </button>
+        <button
+          type="button"
+          onClick={handleDeleteVideo}
+          className="standard-button"
+        >
+          Delete
         </button>
         <NavLink to="/admin" className="standard-button return-button">
           Return
