@@ -53,6 +53,7 @@ const edit: RequestHandler = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, file, season_id } = req.body;
+
     const updateUser = await backgroundRepository.update(
       id,
       name,
