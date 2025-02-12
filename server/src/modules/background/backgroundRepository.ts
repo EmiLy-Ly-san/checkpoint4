@@ -4,6 +4,17 @@ import type { Result, Rows } from "../../../database/client";
 import type { Background } from "./background";
 
 class CategoryRepository {
+  // Create operation
+  async create(background: Background) {
+    // Execute the SQL INSERT query to add a new background to the "background" table
+    const [result] = await databaseClient.query<Result>(
+      "INSERT INTO background (name, file, season_id) VALUES (?, ?, ?)",
+      [background.name, background.file, background.season_id],
+    );
+    // Return the ID of the newly inserted user
+    return result.insertId;
+  }
+
   // The Rs of CRUD - Read operations
 
   async read(id: number) {
