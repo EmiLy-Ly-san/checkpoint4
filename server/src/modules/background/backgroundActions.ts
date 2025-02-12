@@ -50,16 +50,24 @@ const remove: RequestHandler = async (req, res, next) => {
 
 //UPDATE
 const edit: RequestHandler = async (req, res, next) => {
+  // const filePath = `/assets/images/${req.file?.filename}`;
+  let filePath = undefined;
+
+  if (req.file) {
+    filePath = `/assets/images/${req.file?.filename}`;
+  }
+
   try {
     const { id } = req.params;
-    const { name, file, season_id } = req.body;
 
-    const updateUser = await backgroundRepository.update(
+    const { name, season_id } = req.body;
+
+    const updateUser = await backgroundRepository.update({
       id,
       name,
-      file,
+      file: filePath,
       season_id,
-    );
+    });
     if (updateUser) {
       res.status(200).end("Félicitation");
     } else {
