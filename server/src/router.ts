@@ -11,9 +11,9 @@ import backgroundActions from "./modules/background/backgroundActions";
 import itemActions from "./modules/item/itemActions";
 import seasonActions from "./modules/season/seasonActions";
 
+import path from "node:path";
 import multer from "multer";
 import type { FileFilterCallback } from "multer";
-import path from "node:path";
 
 const storage = multer.diskStorage({
   // exemple:  https://github.com/expressjs/multer/blob/master/doc/README-fr.md#diskstorage
