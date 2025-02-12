@@ -11,7 +11,7 @@ class CategoryRepository {
       "INSERT INTO background (name, file, season_id) VALUES (?, ?, ?)",
       [background.name, background.file, background.season_id],
     );
-    // Return the ID of the newly inserted user
+    // Return the ID of the newly inserted backgroud
     return result.insertId;
   }
 
@@ -32,20 +32,9 @@ class CategoryRepository {
     // Execute the SQL SELECT query to retrieve all backgrounds from the "background" table
     const [rows] = await databaseClient.query<Rows>("select * from background");
 
-    // Return the array of videos
+    // Return the array of seasons
     return rows as Background[];
   }
-
-  // Create operation
-  //   async create(category: Category) {
-  //     // Execute the SQL INSERT query to add a new category to the "category" table
-  //     const [result] = await databaseClient.query<Result>(
-  //       "insert into category (name) values (?)",
-  //       [category.name],
-  //     );
-  //     // Return the ID of the newly inserted category
-  //     return result.insertId;
-  //   }
 
   // Update operation
   async update(id: string, name: string, file: string, season_id: number) {
