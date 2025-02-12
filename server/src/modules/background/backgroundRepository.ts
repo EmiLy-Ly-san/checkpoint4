@@ -20,11 +20,11 @@ class CategoryRepository {
   async read(id: number) {
     // Execute the SQL SELECT query to retrieve a specific background by its ID
     const [rows] = await databaseClient.query<Rows>(
-      "select * from background where season_id = ?",
+      "select * from background where id = ?",
       [id],
     );
     // Return the first row of the result, which represents the user
-    return rows as Background[];
+    return rows[0] as Background;
   }
 
   //All backgrounds read
@@ -37,11 +37,36 @@ class CategoryRepository {
   }
 
   // Update operation
-  async update(id: string, name: string, file: string, season_id: number) {
-    const [row] = await databaseClient.query<Result>(
-      "UPDATE background SET name = ?, file = ?, season_id = ? WHERE id = ?",
-      [name, file, season_id, id],
-    );
+  async update(updateData: {
+    id: string;
+    name?: string;
+    file?: string;
+    season_id?: number;
+  }) {
+    const modifiedUpdateData = {
+      name: updateData?.name ? updateData.name : null,
+      file: updateData?.file ? updateData.file : null,
+      season_id: updateData?.season_id ? updateData.season_id : null,
+    };
+
+    const queryKeys = Object.keys(modifiedUpdateData);
+    const queryValues = Object.values(modifiedUpdateData);
+    if (queryKeys?.length <= 0) {
+      return false;
+    }
+    const query = `UPDATE background SET ${queryKeys
+
+      .filter(
+        (key) => !!modifiedUpdateData?.[key as keyof typeof modifiedUpdateData],
+      )
+      .map((key) => `${key} = ?`)
+      .join(", ")} WHERE id = ?`;
+    const values = [
+      ...queryValues.filter((value) => !!value),
+      Number(updateData.id),
+    ];
+
+    const [row] = await databaseClient.query<Result>(query, values);
     return row.affectedRows;
   }
 

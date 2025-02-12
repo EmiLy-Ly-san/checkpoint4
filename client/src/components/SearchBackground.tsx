@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import type { Background } from "../../types/Background";
-import useToast from "../../utils/useToastify";
-import "../../style/HomePage.css";
+// import "../../style/HomePage.css";
 import { Link } from "react-router-dom";
-import BackgroundCard from "../../components/backgroundCard";
+import BackgroundCard from "../components/backgroundCard";
+import type { Background } from "../types/Background";
+import useToast from "../utils/useToastify";
 
-export default function HomePage() {
+export default function SearchBackground() {
   const [backgroundsSeason, setBackgroundsBySeason] = useState<Background[]>();
   const [idOfTheSeason, setIdOfTheSeason] = useState<number>();
   const { notifyError } = useToast();
@@ -82,7 +82,7 @@ export default function HomePage() {
       <section className="background-list">
         {backgroundsSeason?.map((background) => (
           <Link
-            to={`/background/${background.id}`}
+            to={`./${background.id}`}
             className="carousel-slide"
             key={background.id}
           >

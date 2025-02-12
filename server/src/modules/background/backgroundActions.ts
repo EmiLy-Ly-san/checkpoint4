@@ -50,15 +50,24 @@ const remove: RequestHandler = async (req, res, next) => {
 
 //UPDATE
 const edit: RequestHandler = async (req, res, next) => {
+  // const filePath = `/assets/images/${req.file?.filename}`;
+  let filePath = undefined;
+
+  if (req.file) {
+    filePath = `/assets/images/${req.file?.filename}`;
+  }
+
   try {
     const { id } = req.params;
-    const { name, file, season_id } = req.body;
-    const updateUser = await backgroundRepository.update(
+
+    const { name, season_id } = req.body;
+
+    const updateUser = await backgroundRepository.update({
       id,
       name,
-      file,
+      file: filePath,
       season_id,
-    );
+    });
     if (updateUser) {
       res.status(200).end("Félicitation");
     } else {
@@ -71,11 +80,12 @@ const edit: RequestHandler = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
+  const filePath = `/assets/images/${req.file?.filename}`;
   try {
     // Extract the item data from the request body
     const newBackground = {
       name: req.body.name,
-      file: req.body.file,
+      file: filePath,
       season_id: req.body.season_id,
     };
 
