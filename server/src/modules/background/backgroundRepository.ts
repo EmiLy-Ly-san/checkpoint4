@@ -46,6 +46,15 @@ class CategoryRepository {
   //     // Return the ID of the newly inserted category
   //     return result.insertId;
   //   }
+
+  // Update operation
+  async update(id: string, name: string, file: string, season_id: number) {
+    const [row] = await databaseClient.query<Result>(
+      "UPDATE background SET name = ?, file = ?, season_id = ? WHERE id = ?",
+      [name, file, season_id, id],
+    );
+    return row.affectedRows;
+  }
 }
 
 export default new CategoryRepository();

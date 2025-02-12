@@ -35,6 +35,29 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
+//UPDATE
+
+//UPDATE
+const edit: RequestHandler = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { name, file, season_id } = req.body;
+    const updateUser = await backgroundRepository.update(
+      id,
+      name,
+      file,
+      season_id,
+    );
+    if (updateUser) {
+      res.status(200).end("Félicitation");
+    } else {
+      res.sendStatus(401);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
   try {
@@ -56,4 +79,4 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, add };
+export default { browse, read, add, edit };

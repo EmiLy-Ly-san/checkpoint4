@@ -19,6 +19,6 @@ router.post("/api/items", itemActions.add);
 router.get("/api/backgrounds", backgroundActions.browse);
 router.get("/api/background/:id", backgroundActions.read);
 router.post("/api/background", backgroundActions.add);
-// router.put("/api/background/:id", videoActions.edit);
+router.put("/api/background/:id", backgroundActions.edit);
 
 export default router;
