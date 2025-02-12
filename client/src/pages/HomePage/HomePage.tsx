@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import type { Background } from "../../types/Background";
 import useToast from "../../utils/useToastify";
-// import BackgroundCard from "../../components/backgroundCard";
-// import { Link } from "react-router-dom";
+import "../../style/HomePage.css";
+import { Link } from "react-router-dom";
+import BackgroundCard from "../../components/BackgroundCard";
 
 export default function HomePage() {
   const [backgroundsSeason, setBackgroundsBySeason] = useState<Background[]>();
-  console.warn({ backgroundsSeason });
   const [idOfTheSeason, setIdOfTheSeason] = useState<number>();
   const { notifyError } = useToast();
 
@@ -22,17 +22,10 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const urlForSeason = `${import.meta.env.VITE_API_URL}/api/backgrounds-season/${idOfTheSeason}`;
-    recoverInfoBackgrounds(urlForSeason);
-    // if (backgroundsSeason) {
-    //   const backgroundsToFind = backgroundsSeason.filter((backgrounds) => {
-    //     return backgrounds.season_id === idOfTheSeason;
-    //   });
-    //   console.log({ backgroundsToFind });
-
-    // navigate(`/video/${videoToFind?.id}`);
-    //   }
-    // }
+    if (idOfTheSeason) {
+      const urlForSeason = `${import.meta.env.VITE_API_URL}/api/backgrounds-season/${idOfTheSeason}`;
+      recoverInfoBackgrounds(urlForSeason);
+    }
   }, [idOfTheSeason]);
 
   async function recoverInfoBackgrounds(url: string) {
@@ -86,7 +79,7 @@ export default function HomePage() {
           Autumn backgrounds
         </button>
       </section>
-      {/* <section>
+      <section className="background-list">
         {backgroundsSeason?.map((background) => (
           <Link
             to={`/background/${background.id}`}
@@ -96,13 +89,11 @@ export default function HomePage() {
             <BackgroundCard
               title={background.name}
               thumbnailUrl={`${import.meta.env.VITE_API_URL}${background.file}`}
-              isLarge
-              displayCardInfo={false}
               id={background.id}
             />
           </Link>
         ))}
-      </section> */}
+      </section>
     </>
   );
 }

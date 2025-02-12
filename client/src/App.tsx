@@ -4,6 +4,8 @@ import { Bounce, ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
+import "./style/Global.css";
+
 function App() {
   const [setSeason, Season] = useState();
 

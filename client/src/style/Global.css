@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* COLORS */
+  --primary-color: #f8f8f8;
+  --secondary-color: #fdfcfd;
+  --tertiary-color: #f7f7f7;
+  --text-color: #131313;
+  --accent-color-1: rgba(12, 10, 97),;
+  --accent-color-2: #fc8f70;
+  --accent-color-3: #49ad7b;
+  --shadow-color: rgb(0 0 0 / 25%);
+  /*FONT TITLE H1*/
+  --title-font-family: "Manrope", sans-serif;
+  --title-font-weight: bold;
+  --title-font-size-mobile: 20px;
+  --title-font-size-desktop: 30px;
+  /*FONT SUBTITLE H2*/
+  --sub-title-h2-font-family: "Manrope", sans-serif;
+  --sub-title-h2-font-weight: bold;
+  --sub-title-h2-font-size-mobile: 16px;
+  --sub-title-h2-font-size-desktop: 24px;
+  /*FONT SUBTITLE H3*/
+  --sub-title-h3-font-family: "Manrope", sans-serif;
+  --sub-title-h3-font-weight: bold;
+  --sub-title-h3-font-size-mobile: 12px;
+  --sub-title-h3-font-size-desktop: 20px;
+  /*FONT*/
+  --font-small: 12px;
+  --font-normal: 16px;
+  --font-medium: 20px;
+  --font-large: 24px;
+  /*BODY*/
+  --body-font-family: "Inria Sans", sans-serif;
+  --body-font-size: 12px;
+  --body-font-family-desktop: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  color: var(---accent-color-1);
+}
+
+body {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  background: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color-1);
+}

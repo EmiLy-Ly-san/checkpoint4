@@ -1,40 +1,26 @@
-// function BackgroundCard({
-//   isFreemium,
-//   title,
-//   duration,
-//   id,
-//   thumbnailUrl,
-//   isLarge,
-//   displayCardInfo = true,
-// }: function BackgroundCard({
-// ) {
+import type { BackgroundCardProps } from "../types/BackgroundCardProps";
+import "./../style/BackgroundCard.css";
 
-//   return (
-//     <>
-//       <article className="video-card">
-//         <section className="card-content">
-//           <div className="video-item">
-//             <img
-//               src={background.file}
-//               width="300px"
-//               height="168px"
-//               alt={name}
-//               className="background-image"
-//             />
-//           </div>
-//         </section>
-//           <section className="card-footer">
-//             <div className="first-row-card-footer">
-//               <p className="background-title">{name}</p>
-//             </div>
-//                 <img
-//                   className="heart-icon"
-//                   src="/orange-heart.png"
-//                   alt="heart icon"
-//                 />
-//           </section>
-//       </article>
-//     </>
-//   );
-// }
-// export default BackgroundCard;
+function BackgroundCard({ title, thumbnailUrl, id }: BackgroundCardProps) {
+  return (
+    <>
+      <article className="background-card">
+        <section className="card-content">
+          <div className="background-item">
+            <img src={thumbnailUrl} alt={title} className="background-image" />
+          </div>
+        </section>
+        <section className="card-footer">
+          <p className="background-title">{title}</p>
+          <img
+            className="heart-icon"
+            src="/orange-heart.png"
+            alt="heart icon"
+            data-id={id}
+          />
+        </section>
+      </article>
+    </>
+  );
+}
+export default BackgroundCard;
