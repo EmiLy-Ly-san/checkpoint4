@@ -1,17 +1,17 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Bounce, ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-// import { useState } from "react";
 
 function App() {
-  // const [setSeason, Season] = useState<number>();
+  const [setSeason, Season] = useState();
 
   return (
     <>
       <Header />
       <main>
-        <Outlet />
+        <Outlet context={{ setSeason, Season }} />
       </main>
       <Footer />
       <ToastContainer
