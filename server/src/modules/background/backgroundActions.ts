@@ -72,11 +72,12 @@ const edit: RequestHandler = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
+  const filePath = `/assets/images/${req.file?.filename}`;
   try {
     // Extract the item data from the request body
     const newBackground = {
       name: req.body.name,
-      file: req.body.file,
+      file: filePath,
       season_id: req.body.season_id,
     };
 
