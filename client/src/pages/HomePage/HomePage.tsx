@@ -1,3 +1,14 @@
 export default function HomePage() {
-  return <div>HomePage</div>;
+  // const handleSeasonClick = () => {};
+  return (
+    <section>
+      <button type="button">
+        {/* onClick={handleSeasonClick} */}
+        Winter backgrounds
+      </button>
+      <button type="button">Spring backgrounds</button>
+      <button type="button">Summer backgrounds</button>
+      <button type="button">Autumn backgrounds</button>
+    </section>
+  );
 }
