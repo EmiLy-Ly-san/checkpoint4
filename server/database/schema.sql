@@ -1,14 +1,19 @@
 create table user (
   id int unsigned primary key auto_increment not null,
+  firstname  VARCHAR(45) NOT NULL,
+  lastname  VARCHAR(45) NOT NULL,
   email varchar(255) not null unique,
-  password varchar(255) not null
+  password varchar(255) not null,
+  is_admin BOOLEAN NOT NULL DEFAULT FALSE,
 );
 
-create table item (
+create table background (
   id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+  name  VARCHAR(45) NOT NULL,
+  file VARCHAR(200) NOT NULL,
+  season_id  INT NOT NULL,
+  source VARCHAR(200) NOT NULL,
+  FOREIGN KEY (season_id) REFERENCES season(id)
 );
 
 insert into user(id, email, password)
