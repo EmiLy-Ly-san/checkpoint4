@@ -33,7 +33,7 @@ insert into user(id, email, password)
 values
   (1, "jdoe@mail.com", "123456");
 
-insert into item(id, title, user_id)
+insert into background(name, file, season_id, source)
 values
   (1, "Stuff", 1),
   (2, "Doodads", 1);
