@@ -17,5 +17,6 @@ router.post("/api/items", itemActions.add);
 /* ************************************************************************* */
 
 router.get("/api/backgrounds", backgroundActions.browse);
+router.get("/api/background/:id", backgroundActions.read);
 
 export default router;

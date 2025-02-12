@@ -15,4 +15,24 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse };
+// The R of BREAD - Read operation
+const read: RequestHandler = async (req, res, next) => {
+  try {
+    // Fetch a specific background based on the provided ID
+    const backgroundId = Number(req.params.id);
+    const background = await backgroundRepository.read(backgroundId);
+
+    // If the item is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the item in JSON format
+    if (background == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(background);
+    }
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
+export default { browse, read };

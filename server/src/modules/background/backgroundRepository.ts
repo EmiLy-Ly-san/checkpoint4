@@ -4,17 +4,17 @@ import type { Result, Rows } from "../../../database/client";
 import type { Background } from "./background";
 
 class CategoryRepository {
-  // By id
-  // async read(id: number) {
-  //   // Execute the SQL SELECT query to retrieve a specific video by its ID
-  //   const [rows] = await databaseClient.query<Rows>(
-  //     "select id, name, duration, thumbnail, description, category_id, preview_image, is_freemium, added_date, is_heroSlide, is_popular from video where category_id = ?",
-  //     [id],
-  //   );
+  // The Rs of CRUD - Read operations
 
-  //   // Return the first row of the result, which represents the video
-  //   return rows as Video[];
-  // }
+  async read(id: number) {
+    // Execute the SQL SELECT query to retrieve a specific background by its ID
+    const [rows] = await databaseClient.query<Rows>(
+      "select * from background where id = ?",
+      [id],
+    );
+    // Return the first row of the result, which represents the user
+    return rows[0] as Background;
+  }
 
   //All backgrounds read
   async readAll() {
