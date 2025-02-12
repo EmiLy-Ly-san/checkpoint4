@@ -14,7 +14,7 @@ function BackgroundCard({ title, thumbnailUrl, id }: BackgroundCardProps) {
           <p className="background-title">{title}</p>
           <img
             className="heart-icon"
-            src="/orange-heart.png"
+            src="heart-purple.png"
             alt="heart icon"
             data-id={id}
           />

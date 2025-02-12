@@ -57,3 +57,31 @@ a {
   text-decoration: none;
   color: var(--accent-color-1);
 }
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.standard-button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  border-radius: 16px;
+  color: var(--text-color);
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  transition: all 0.3ms ease-out;
+}
+
+.standard-button:hover {
+  border: solid 2px var(--accent-color-2);
+  color: var(--accent-color-2);
+}
+
+.standard-button.active {
+  border: solid 2px var(--accent-color-2);
+  color: var(--accent-color-2);
+}

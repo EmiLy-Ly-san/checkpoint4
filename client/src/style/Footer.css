@@ -5,7 +5,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  position: fixed;
+  position: sticky;
   z-index: 20;
   left: 0;
   top: auto;
