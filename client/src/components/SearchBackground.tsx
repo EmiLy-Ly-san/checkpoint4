@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 // import "../../style/HomePage.css";
 import { Link } from "react-router-dom";
-import type { Background } from "../types/Background";
 import BackgroundCard from "../components/backgroundCard";
+import type { Background } from "../types/Background";
 import useToast from "../utils/useToastify";
 
 export default function SearchBackground() {
