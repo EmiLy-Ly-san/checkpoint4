@@ -25,6 +25,6 @@ router.delete("/api/background/:id", backgroundActions.remove);
 
 router.get("/api/seasons", seasonActions.browse);
 router.get("/api/backgrounds-season/:id", seasonActions.read);
-//vient chercher toutes les videos d'une catégorie à partir de l'id de la saison
+//vient chercher tous les background d'une catégorie à partir de l'id de la saison
 
 export default router;
