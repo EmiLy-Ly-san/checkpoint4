@@ -20,6 +20,7 @@ const read: RequestHandler = async (req, res, next) => {
   try {
     // Fetch a specific category based on the provided ID
     const seasonId = Number(req.params.id);
+
     const season = await seasonRepository.read(seasonId);
 
     // If the category is not found, respond with HTTP 404 (Not Found)

@@ -18,7 +18,7 @@ const browse: RequestHandler = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read: RequestHandler = async (req, res, next) => {
   try {
-    // Fetch a specific background based on the provided ID
+    // Fetch backgrounds based on the provided ID
     const backgroundId = Number(req.params.id);
     const background = await backgroundRepository.read(backgroundId);
 
