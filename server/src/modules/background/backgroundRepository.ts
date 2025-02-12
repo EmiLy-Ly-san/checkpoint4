@@ -55,6 +55,15 @@ class CategoryRepository {
     );
     return row.affectedRows;
   }
+
+  // Delete operation
+  async remove(id: number) {
+    const [rows] = await databaseClient.query<Rows>(
+      "DELETE FROM background where id = ?",
+      [id],
+    );
+    return rows[0] as Background;
+  }
 }
 
 export default new CategoryRepository();

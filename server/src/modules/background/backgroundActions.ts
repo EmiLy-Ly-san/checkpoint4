@@ -35,7 +35,18 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
-//UPDATE
+// REMOVE operation
+const remove: RequestHandler = async (req, res, next) => {
+  try {
+    const backgroundId = Number(req.params.id);
+
+    const backgroundToRemove = await backgroundRepository.remove(backgroundId);
+    res.status(201).json({ backgroundToRemove });
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
 
 //UPDATE
 const edit: RequestHandler = async (req, res, next) => {
@@ -79,4 +90,4 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, add, edit };
+export default { browse, read, add, edit, remove };

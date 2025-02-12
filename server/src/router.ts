@@ -20,5 +20,6 @@ router.get("/api/backgrounds", backgroundActions.browse);
 router.get("/api/background/:id", backgroundActions.read);
 router.post("/api/background", backgroundActions.add);
 router.put("/api/background/:id", backgroundActions.edit);
+router.delete("/api/background/:id", backgroundActions.remove);
 
 export default router;
