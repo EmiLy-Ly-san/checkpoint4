@@ -3,7 +3,7 @@ import type { Background } from "../../types/Background";
 import useToast from "../../utils/useToastify";
 import "../../style/HomePage.css";
 import { Link } from "react-router-dom";
-import BackgroundCard from "../../components/BackgroundCard";
+import BackgroundCard from "../../components/backgroundCard";
 
 export default function HomePage() {
   const [backgroundsSeason, setBackgroundsBySeason] = useState<Background[]>();
