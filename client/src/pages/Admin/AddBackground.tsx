@@ -99,10 +99,10 @@ export default function AddBackground() {
         </fieldset>
 
         <section className="form-buttons-wrapper">
-          <button type="submit" className="standard-button">
+          <button type="submit" className="little-cta">
             Add
           </button>
-          <NavLink to="/admin" className="standard-button return-button">
+          <NavLink to="/admin" className="standard-button ">
             Return
           </NavLink>
         </section>
