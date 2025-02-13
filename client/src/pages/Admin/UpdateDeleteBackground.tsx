@@ -75,7 +75,7 @@ export default function UpdateDeleteBackground() {
     }
   };
 
-  const handleDeleteVideo = async () => {
+  const handleDeleteBackground = async () => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/background/${backgroundId}`,
@@ -90,7 +90,7 @@ export default function UpdateDeleteBackground() {
         throw new Error("An unknown error occurred.");
       }
 
-      notifySuccess(`The video ${background?.name} has been removed.`);
+      notifySuccess(`The background ${background?.name} has been removed.`);
     } catch (err) {
       notifyError((err as Error).message);
     }
@@ -156,7 +156,7 @@ export default function UpdateDeleteBackground() {
         </button>
         <button
           type="button"
-          onClick={handleDeleteVideo}
+          onClick={handleDeleteBackground}
           className="little-cta"
         >
           Delete
