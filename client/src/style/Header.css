@@ -28,4 +28,20 @@ nav a.active {
 .logo {
   font-family: var(--logo-font);
   font-size: 32px;
+  color: var(--accent-color-2);
+}
+
+@media screen and (max-width: 650px) {
+  header {
+    flex-direction: column;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
 }

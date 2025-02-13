@@ -74,6 +74,9 @@ button {
   height: 40px;
   width: 200px;
   transition: all 0.3ms ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .standard-button:hover {
