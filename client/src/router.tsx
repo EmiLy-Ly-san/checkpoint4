@@ -6,11 +6,11 @@ import Admin from "./pages/Admin/Admin";
 import UpdateDeleteBackground from "./pages/Admin/UpdateDeleteBackground";
 import UserGestion from "./pages/Admin/UserGestion";
 import BackgroundPage from "./pages/Background/BackgroundPage";
+import Favorites from "./pages/Favorites/Favorites";
 import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/Login/Login";
 import Season from "./pages/Season/Season";
 import Subscribe from "./pages/Subscribe/Subscribe";
-import Favorites from "./pages/Favorites/Favorites";
 
 export const router = createBrowserRouter([
   {
