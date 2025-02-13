@@ -17,12 +17,6 @@
   gap: 20px;
 }
 
-legend {
-  color: var(--accent-color-2);
-  font-weight: bold;
-  font-size: 22px;
-}
-
 input {
   border-radius: 16px;
   border: solid 2px var(--accent-color-2);

@@ -53,6 +53,30 @@ body {
   background: var(--primary-color);
 }
 
+.light {
+  /* COLORS LIGHT THEME*/
+  --primary-color: #fdfcfd;
+  --secondary-color: #f8f8f8;
+  --tertiary-color: #f7f7f7;
+  --text-color: #131313;
+  --accent-color-1: rgba(12, 10, 97),;
+  --accent-color-2: #ac8fd3;
+  --accent-color-3: #49ad7b;
+  --shadow-color: rgb(0 0 0 / 12%);
+}
+
+.dark {
+  /* COLORS */
+  --primary-color: #0d0d0d;
+  --secondary-color: #131313;
+  --tertiary-color: #1c1e1f;
+  --text-color: #e6dbe3;
+  --accent-color-1: #fc666a;
+  --accent-color-2: #fc8f70;
+  --accent-color-3: #49ad7b;
+  --shadow-color: rgb(0 0 0 / 90%);
+}
+
 h1 {
   color: var(--accent-color-2);
 }

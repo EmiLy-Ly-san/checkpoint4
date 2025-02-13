@@ -4,6 +4,7 @@ import type { Background } from "../../types/Background";
 import type { Season } from "../../types/Season";
 import useToast from "../../utils/useToastify";
 import "../../style/AddBackground.css";
+import "../../style/UpdateDeleteBackground.css";
 
 export default function UpdateDeleteBackground() {
   const { notifyError, notifySuccess } = useToast();

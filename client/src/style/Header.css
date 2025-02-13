@@ -43,5 +43,6 @@ nav a.active {
 
   nav a {
     font-size: 12px;
+    margin: 8px;
   }
 }

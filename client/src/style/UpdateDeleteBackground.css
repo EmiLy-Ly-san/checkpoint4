@@ -1,0 +1,24 @@
+legend {
+  color: var(--accent-color-2);
+  font-weight: bold;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 650px) {
+  legend {
+    color: var(--accent-color-2);
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .current-file-preview {
+    width: 300px;
+    height: 168px;
+  }
+
+  .current-file-preview img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
