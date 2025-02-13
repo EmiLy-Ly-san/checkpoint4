@@ -106,6 +106,7 @@ export default function UpdateDeleteBackground() {
           id="name"
           name="name"
           defaultValue={background.name}
+          style={{ color: "var(--textColor)" }}
         />
         <select
           name="season_id"

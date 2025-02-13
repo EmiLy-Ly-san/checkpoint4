@@ -1,3 +1,3 @@
 export default function UserGestion() {
-  return <div>UserGestion</div>;
+  return <div style={{ color: "var(--text-color)" }}>UserGestion</div>;
 }

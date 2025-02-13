@@ -1,5 +1,5 @@
 footer {
-  border-top: solid 1px var(--shadow-color);
+  border-top: solid 1px rgb(0 0 0 / 12%);
   height: 70px;
   display: flex;
   justify-content: center;

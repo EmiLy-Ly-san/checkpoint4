@@ -11,7 +11,7 @@
   --accent-color-1: rgba(12, 10, 97),;
   --accent-color-2: #ac8fd3;
   --accent-color-3: #49ad7b;
-  --shadow-color: rgb(0 0 0 / 12%);
+  --shadow-color: rgb(0 0 0 / 25%);
   /*FONT TITLE H1*/
   --logo-font: "Pacifico", sans-serif;
   --title-font-family: "Manrope", sans-serif;
@@ -53,14 +53,6 @@ body {
   color: var(--text-color);
 }
 
-main {
-  background: var(--primary-color);
-}
-
-p {
-  color: var(--text-color);
-}
-
 .light {
   /* COLORS LIGHT THEME*/
   --primary-color: #fdfcfd;
@@ -70,7 +62,7 @@ p {
   --accent-color-1: rgba(12, 10, 97),;
   --accent-color-2: #ac8fd3;
   --accent-color-3: #49ad7b;
-  --shadow-color: rgb(0 0 0 / 12%);
+  --shadow-color: rgb(0 0 0 / 25%);
 }
 
 .dark {
@@ -80,13 +72,23 @@ p {
   --tertiary-color: #1c1e1f;
   --text-color: #e6dbe3;
   --accent-color-1: #f8f8f8;
-  --accent-color-2: #ac8fd3;
+  --accent-color-2: #ed4a7b;
   --accent-color-3: #49ad7b;
   --shadow-color: rgb(0 0 0 / 90%);
 }
 
+main {
+  background: var(--primary-color);
+  box-shadow: inset 0px 2px 6px -2px var(--shadow-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
 h1 {
   color: var(--accent-color-2);
+  text-align: center;
 }
 
 h2 {
