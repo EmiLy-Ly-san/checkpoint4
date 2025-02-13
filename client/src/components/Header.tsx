@@ -7,20 +7,22 @@ export default function Header() {
   // console.log({ theme });
   return (
     <header className={`header-container ${theme ? "light" : "dark"}`}>
-      <NavLink className="logo" to={"/"}>
-        Anime Art Season
-      </NavLink>
-      <button
-        type="button"
-        onClick={() => setTheme(!theme)}
-        className="button-switch-theme"
-      >
-        <img
-          className="icon-switch-theme"
-          src={theme ? "/dark_mode.png" : "/light_mode.png"}
-          alt="switch theme icon"
-        />
-      </button>
+      <section className="logo-and-theme-wrapper">
+        <NavLink className="logo" to={"/"}>
+          Anime Art Season
+        </NavLink>
+        <button
+          type="button"
+          onClick={() => setTheme(!theme)}
+          className="button-switch-theme"
+        >
+          <img
+            className="icon-switch-theme"
+            src={theme ? "/dark_mode.png" : "/light_mode.png"}
+            alt="switch theme icon"
+          />
+        </button>
+      </section>
       <nav>
         <NavLink to={"/admin"}>Admin</NavLink>
         <NavLink to={"/"}>Collections</NavLink>
