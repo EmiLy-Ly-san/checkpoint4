@@ -10,7 +10,7 @@ export default function Header() {
       <nav>
         <NavLink to={"/admin"}>Admin</NavLink>
         <NavLink to={"/"}>Collections</NavLink>
-        <NavLink to={"/admin"}>My favorites</NavLink>
+        <NavLink to={"/favorites"}>My favorites</NavLink>
         <NavLink to={"/login"}>Login</NavLink>
       </nav>
     </header>
