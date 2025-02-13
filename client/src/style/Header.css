@@ -31,7 +31,7 @@ nav a.active {
   color: var(--accent-color-2);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
   header {
     flex-direction: column;
     height: 80px;

@@ -67,7 +67,7 @@ export default function AddBackground() {
             type="text"
             id="name"
             name="name"
-            place-holder="Give it a name "
+            placeholder="Give it a name "
             required
           />
 

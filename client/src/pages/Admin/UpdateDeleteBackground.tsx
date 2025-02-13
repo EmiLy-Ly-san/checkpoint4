@@ -144,7 +144,7 @@ export default function UpdateDeleteBackground() {
 
       <section className="form-buttons-wrapper">
         <button type="submit" className="little-cta">
-          Add
+          Update
         </button>
         <button
           type="button"
