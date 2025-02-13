@@ -7,7 +7,7 @@ import BackgroundCard from "../../components/backgroundCard";
 
 export default function HomePage() {
   const [backgroundsSeason, setBackgroundsBySeason] = useState<Background[]>();
-  const [idOfTheSeason, setIdOfTheSeason] = useState<number>();
+  const [idOfTheSeason, setIdOfTheSeason] = useState<number>(1);
   const { notifyError } = useToast();
 
   const handleSeasonClick = (
@@ -40,9 +40,10 @@ export default function HomePage() {
   }
 
   return (
-    <>
-      <section>
+    <div className="home-page">
+      <section className="button-home-wrapper">
         <button
+          className={`standard-button ${idOfTheSeason === 1 ? "active" : ""}`}
           data-id="1"
           type="button"
           onClick={(event) => {
@@ -52,6 +53,7 @@ export default function HomePage() {
           Winter backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 2 ? "active" : ""}`}
           data-id="2"
           type="button"
           onClick={(event) => {
@@ -61,6 +63,7 @@ export default function HomePage() {
           Spring backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 3 ? "active" : ""}`}
           data-id="3"
           type="button"
           onClick={(event) => {
@@ -70,6 +73,7 @@ export default function HomePage() {
           Summer backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 4 ? "active" : ""}`}
           data-id="4"
           type="button"
           onClick={(event) => {
@@ -94,6 +98,6 @@ export default function HomePage() {
           </Link>
         ))}
       </section>
-    </>
+    </div>
   );
 }

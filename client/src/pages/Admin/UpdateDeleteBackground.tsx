@@ -3,6 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import type { Background } from "../../types/Background";
 import type { Season } from "../../types/Season";
 import useToast from "../../utils/useToastify";
+import "../../style/AddBackground.css";
 
 export default function UpdateDeleteBackground() {
   const { notifyError, notifySuccess } = useToast();
@@ -95,23 +96,16 @@ export default function UpdateDeleteBackground() {
   };
 
   return background ? (
-    <form onSubmit={handleUpdateBackground} className="add-Background-form">
+    <form onSubmit={handleUpdateBackground} className="add-page">
       <fieldset className="main-info-background-wrapper">
-        <legend>Main information Background</legend>
-        <label htmlFor="name">Name</label>
+        <legend>Current informations of the Background</legend>
+        <p>Change the information if you want to update it</p>
         <input
           type="text"
           id="name"
           name="name"
           defaultValue={background.name}
         />
-
-        <label id="season-title" htmlFor="season_id">
-          Title of the season
-        </label>
-        <label htmlFor="season_id" className="label-season">
-          Choose a season
-        </label>
         <select
           name="season_id"
           id="season_id"
@@ -130,31 +124,32 @@ export default function UpdateDeleteBackground() {
             );
           })}
         </select>
+        <section className="current-file-preview">
+          <img
+            className="current-file"
+            src={`${import.meta.env.VITE_API_URL}${background?.file}`}
+            alt="The current background."
+          />
+        </section>
+        <section className="preview-image-choice">
+          <label htmlFor="file">Choose an other image</label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            accept="image/png, image/jpeg"
+          />
+        </section>
       </fieldset>
-      <section className="current-file-preview">
-        <img
-          className="current-file"
-          src={`${import.meta.env.VITE_API_URL}${background?.file}`}
-          alt="The current background."
-        />
-      </section>
-      <section className="preview-image-choice">
-        <label htmlFor="file">Choose a preview image</label>
-        <input
-          type="file"
-          id="file"
-          name="file"
-          accept="image/png, image/jpeg"
-        />
-      </section>
+
       <section className="form-buttons-wrapper">
-        <button type="submit" className="standard-button">
-          Add
+        <button type="submit" className="little-cta">
+          Update
         </button>
         <button
           type="button"
           onClick={handleDeleteVideo}
-          className="standard-button"
+          className="little-cta"
         >
           Delete
         </button>

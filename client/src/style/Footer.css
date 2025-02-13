@@ -1,0 +1,19 @@
+footer {
+  border-top: solid 1px var(--shadow-color);
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: sticky;
+  z-index: 20;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  background: var(--secondary-color);
+}
+
+footer img {
+  width: 24px;
+}

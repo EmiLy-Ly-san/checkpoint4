@@ -5,7 +5,8 @@ import AddBackground from "./pages/Admin/AddBackground";
 import Admin from "./pages/Admin/Admin";
 import UpdateDeleteBackground from "./pages/Admin/UpdateDeleteBackground";
 import UserGestion from "./pages/Admin/UserGestion";
-import Background from "./pages/Background/Background";
+import BackgroundPage from "./pages/Background/BackgroundPage";
+import Favorites from "./pages/Favorites/Favorites";
 import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/Login/Login";
 import Season from "./pages/Season/Season";
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+      {
         path: "/admin",
         element: <Admin />,
         children: [
@@ -49,11 +54,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/background/:id",
-        element: <Background />,
+        element: <BackgroundPage />,
         loader: async ({ params }) => {
           try {
             const response = await fetch(
-              `${import.meta.env.VITE_API_URL}/api/videos/${params.id}`,
+              `${import.meta.env.VITE_API_URL}/api/background/${params.id}`,
             );
 
             if (response.ok) {

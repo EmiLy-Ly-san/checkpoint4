@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import BackgroundCard from "../components/backgroundCard";
 import type { Background } from "../types/Background";
 import useToast from "../utils/useToastify";
+import "../style/HomePage.css";
 
 export default function SearchBackground() {
   const [backgroundsSeason, setBackgroundsBySeason] = useState<Background[]>();
@@ -40,9 +41,12 @@ export default function SearchBackground() {
   }
 
   return (
-    <>
-      <section>
+    <div className="home-page">
+      <h2>Update or delete a background</h2>
+      <p>Choose a season to find a background</p>
+      <section className="button-home-wrapper">
         <button
+          className={`standard-button ${idOfTheSeason === 1 ? "active" : ""}`}
           data-id="1"
           type="button"
           onClick={(event) => {
@@ -52,6 +56,7 @@ export default function SearchBackground() {
           Winter backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 2 ? "active" : ""}`}
           data-id="2"
           type="button"
           onClick={(event) => {
@@ -61,6 +66,7 @@ export default function SearchBackground() {
           Spring backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 3 ? "active" : ""}`}
           data-id="3"
           type="button"
           onClick={(event) => {
@@ -70,6 +76,7 @@ export default function SearchBackground() {
           Summer backgrounds
         </button>
         <button
+          className={`standard-button ${idOfTheSeason === 4 ? "active" : ""}`}
           data-id="4"
           type="button"
           onClick={(event) => {
@@ -94,6 +101,6 @@ export default function SearchBackground() {
           </Link>
         ))}
       </section>
-    </>
+    </div>
   );
 }
