@@ -88,12 +88,18 @@ export default function AddBackground() {
             })}
           </select>
           <section className="preview-image-choice">
-            <label htmlFor="file">Choose an image</label>
+            <label
+              htmlFor="file"
+              style={{ color: "var(--text-color)", padding: "8px" }}
+            >
+              Choose an image
+            </label>
             <input
               type="file"
               id="file"
               name="file"
               accept="image/png, image/jpeg"
+              style={{ padding: "8px" }}
             />
           </section>
         </fieldset>

@@ -11,7 +11,7 @@
   --accent-color-1: rgba(12, 10, 97),;
   --accent-color-2: #ac8fd3;
   --accent-color-3: #49ad7b;
-  --shadow-color: rgb(0 0 0 / 12%);
+  --shadow-color: rgb(0 0 0 / 25%);
   /*FONT TITLE H1*/
   --logo-font: "Pacifico", sans-serif;
   --title-font-family: "Manrope", sans-serif;
@@ -44,17 +44,55 @@
   padding: 0;
   list-style-type: none;
   box-sizing: border-box;
-  color: var(---accent-color-1);
 }
 
 body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.light {
+  /* COLORS LIGHT THEME*/
+  --primary-color: #fdfcfd;
+  --secondary-color: #f8f8f8;
+  --tertiary-color: #f7f7f7;
+  --text-color: #131313;
+  --accent-color-1: rgba(12, 10, 97),;
+  --accent-color-2: #ac8fd3;
+  --accent-color-3: #49ad7b;
+  --shadow-color: rgb(0 0 0 / 25%);
+}
+
+.dark {
+  /* COLORS */
+  --primary-color: #0d0d0d;
+  --secondary-color: #131313;
+  --tertiary-color: #1c1e1f;
+  --text-color: #e6dbe3;
+  --accent-color-1: #f8f8f8;
+  --accent-color-2: #ed4a7b;
+  --accent-color-3: #49ad7b;
+  --shadow-color: rgb(0 0 0 / 90%);
+}
+
+main {
+  background: var(--primary-color);
+  box-shadow: inset 0px 2px 6px -2px var(--shadow-color);
+}
+
+p {
+  color: var(--text-color);
 }
 
 h1 {
   color: var(--accent-color-2);
+  text-align: center;
+}
+
+h2 {
+  color: var(--accent-color-1);
 }
 
 a {
@@ -98,7 +136,7 @@ button {
   background: var(--accent-color-2);
   width: 100px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 16px;
   color: white;
   transition: all 100ms ease-in;
 }

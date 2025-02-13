@@ -3,16 +3,18 @@ import { Outlet } from "react-router-dom";
 import { Bounce, ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import useTheme from "./utils/useTheme";
 
 import "./style/Global.css";
 
 function App() {
   const [setSeason, Season] = useState();
+  const { theme } = useTheme();
 
   return (
     <>
       <Header />
-      <main>
+      <main className={theme ? "light" : "dark"}>
         <Outlet context={{ setSeason, Season }} />
       </main>
       <Footer />

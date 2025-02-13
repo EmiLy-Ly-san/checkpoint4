@@ -1,7 +1,9 @@
 import type { BackgroundCardProps } from "../types/BackgroundCardProps";
+import useTheme from "../utils/useTheme";
 import "./../style/BackgroundCard.css";
 
 function BackgroundCard({ title, thumbnailUrl, id }: BackgroundCardProps) {
+  const { theme } = useTheme();
   return (
     <>
       <article className="background-card">
@@ -14,7 +16,7 @@ function BackgroundCard({ title, thumbnailUrl, id }: BackgroundCardProps) {
           <p className="background-title">{title}</p>
           <img
             className="heart-icon"
-            src="/heart-purple.png"
+            src={theme ? "/heart.png" : "/heart-purple.png"}
             alt="heart icon"
             data-id={id}
           />

@@ -4,6 +4,7 @@ import type { Background } from "../../types/Background";
 import type { Season } from "../../types/Season";
 import useToast from "../../utils/useToastify";
 import "../../style/AddBackground.css";
+import "../../style/UpdateDeleteBackground.css";
 
 export default function UpdateDeleteBackground() {
   const { notifyError, notifySuccess } = useToast();
@@ -74,7 +75,7 @@ export default function UpdateDeleteBackground() {
     }
   };
 
-  const handleDeleteVideo = async () => {
+  const handleDeleteBackground = async () => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/background/${backgroundId}`,
@@ -89,7 +90,7 @@ export default function UpdateDeleteBackground() {
         throw new Error("An unknown error occurred.");
       }
 
-      notifySuccess(`The video ${background?.name} has been removed.`);
+      notifySuccess(`The background ${background?.name} has been removed.`);
     } catch (err) {
       notifyError((err as Error).message);
     }
@@ -105,6 +106,7 @@ export default function UpdateDeleteBackground() {
           id="name"
           name="name"
           defaultValue={background.name}
+          style={{ color: "#131313" }}
         />
         <select
           name="season_id"
@@ -132,12 +134,18 @@ export default function UpdateDeleteBackground() {
           />
         </section>
         <section className="preview-image-choice">
-          <label htmlFor="file">Choose an other image</label>
+          <label
+            htmlFor="file"
+            style={{ color: "var(--text-color)", padding: "8px" }}
+          >
+            Choose an other image
+          </label>
           <input
             type="file"
             id="file"
             name="file"
             accept="image/png, image/jpeg"
+            style={{ padding: "8px" }}
           />
         </section>
       </fieldset>
@@ -148,7 +156,7 @@ export default function UpdateDeleteBackground() {
         </button>
         <button
           type="button"
-          onClick={handleDeleteVideo}
+          onClick={handleDeleteBackground}
           className="little-cta"
         >
           Delete

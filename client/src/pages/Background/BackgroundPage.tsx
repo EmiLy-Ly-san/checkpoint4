@@ -9,7 +9,7 @@ export default function BackgroundPage() {
   return (
     <div className="background-page">
       <h2>" {name} "</h2>
-      <div>
+      <div className="background-container">
         <img src={`${import.meta.env.VITE_API_URL}${file}`} alt="" />
       </div>
       <button
