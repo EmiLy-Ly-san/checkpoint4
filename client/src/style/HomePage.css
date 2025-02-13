@@ -21,3 +21,9 @@
   gap: 10px;
   margin: 24px auto;
 }
+
+@media screen and (max-width: 650px) {
+  .button-home-wrapper {
+    flex-direction: column;
+  }
+}

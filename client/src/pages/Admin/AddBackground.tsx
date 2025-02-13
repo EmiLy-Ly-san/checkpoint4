@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import type { Season } from "../../types/Season";
 import useToast from "../../utils/useToastify";
+import "../../style/AddBackground.css";
 
 export default function AddBackground() {
   const { notifyError, notifySuccess } = useToast();
@@ -57,46 +58,55 @@ export default function AddBackground() {
   };
 
   return (
-    <form onSubmit={handleCreateBackground} className="add-Background-form">
-      <fieldset className="main-info-background-wrapper">
-        <legend>Main information Background</legend>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" required />
+    <div className="add-page">
+      <form onSubmit={handleCreateBackground} className="add-Background-form">
+        <fieldset className="main-info-background-wrapper">
+          {/* <label htmlFor="name">Name</label> */}
+          <h2>Add a background</h2>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            place-holder="Give it a name "
+            required
+          />
 
-        <label id="season-title" htmlFor="season_id">
+          {/* <label id="season-title" htmlFor="season_id">
           Title of the season
-        </label>
-        <label htmlFor="season_id" className="label-season">
+        </label> */}
+          {/* <label htmlFor="season_id" className="label-season">
           Choose a season
-        </label>
-        <select name="season_id" id="season_id">
-          <option value="">--Please choose a season--</option>
-          {seasons.map((season) => {
-            return (
-              <option key={season.id} value={season.id}>
-                {season.name}
-              </option>
-            );
-          })}
-        </select>
-      </fieldset>
-      <section className="preview-image-choice">
-        <label htmlFor="file">Choose a preview image</label>
-        <input
-          type="file"
-          id="file"
-          name="file"
-          accept="image/png, image/jpeg"
-        />
-      </section>
-      <section className="form-buttons-wrapper">
-        <button type="submit" className="standard-button">
-          Add
-        </button>
-        <NavLink to="/admin" className="standard-button return-button">
-          Return
-        </NavLink>
-      </section>
-    </form>
+        </label> */}
+          <select name="season_id" id="season_id">
+            <option value="">--Please choose a season--</option>
+            {seasons.map((season) => {
+              return (
+                <option key={season.id} value={season.id}>
+                  {season.name}
+                </option>
+              );
+            })}
+          </select>
+          <section className="preview-image-choice">
+            <label htmlFor="file">Choose an image</label>
+            <input
+              type="file"
+              id="file"
+              name="file"
+              accept="image/png, image/jpeg"
+            />
+          </section>
+        </fieldset>
+
+        <section className="form-buttons-wrapper">
+          <button type="submit" className="standard-button">
+            Add
+          </button>
+          <NavLink to="/admin" className="standard-button return-button">
+            Return
+          </NavLink>
+        </section>
+      </form>
+    </div>
   );
 }

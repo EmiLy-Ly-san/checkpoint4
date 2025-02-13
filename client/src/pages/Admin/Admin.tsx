@@ -6,7 +6,6 @@ export default function Admin() {
 
   return (
     <div className="home-page">
-      <h1 className="title-admin">Admin section</h1>
       {!!match && (
         <section className="button-home-wrapper">
           <NavLink to={"./add-Background"} className="standard-button">
