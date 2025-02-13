@@ -58,6 +58,10 @@ values
   ("In the middle of the street", "/assets/images/autumn10.jpg", 4),
   ("My smile in the rain", "/assets/images/autumn11.jpg", 4),
   ("Thoughtful", "/assets/images/autumn12.jpg", 4),
+  ("Dragon mood", "/assets/images/autumn13.jpg", 4),
+  ("Pink sword", "/assets/images/autumn14.jpg", 4),
+  ("Blue sword", "/assets/images/autumn15.jpg", 4),
+  ("Green sword", "/assets/images/autumn16.jpg", 4),
   ("Singing under the sky", "/assets/images/spring1.jpg", 2),
   ("On the balcony", "/assets/images/spring2.jpg", 2),
   ("Breath of cloud", "/assets/images/spring3.jpg", 2),
@@ -93,4 +97,8 @@ values
   ("Snowy street", "/assets/images/winter9.jpg", 1),
   ("Wink for you", "/assets/images/winter10.jpg", 1),
   ("Biking in the snow", "/assets/images/winter11.jpg", 1),
-  ("Look at me", "/assets/images/winter12.jpg", 1);
+  ("Look at me", "/assets/images/winter12.jpg", 1),
+  ("Naruto in love !", "/assets/images/winter13.jpg", 1),
+  ("Cottony streets", "/assets/images/winter14.jpg", 1),
+  ("Snow of mount fuji", "/assets/images/winter15.jpg", 1),
+  ("Chritsmas bear", "/assets/images/winter16.jpg", 1);

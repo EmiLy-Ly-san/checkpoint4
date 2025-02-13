@@ -136,7 +136,7 @@ button {
   background: var(--accent-color-2);
   width: 100px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 16px;
   color: white;
   transition: all 100ms ease-in;
 }

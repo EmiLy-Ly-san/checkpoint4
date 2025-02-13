@@ -106,7 +106,7 @@ export default function UpdateDeleteBackground() {
           id="name"
           name="name"
           defaultValue={background.name}
-          style={{ color: "var(--textColor)" }}
+          style={{ color: "#131313" }}
         />
         <select
           name="season_id"
@@ -134,12 +134,18 @@ export default function UpdateDeleteBackground() {
           />
         </section>
         <section className="preview-image-choice">
-          <label htmlFor="file">Choose an other image</label>
+          <label
+            htmlFor="file"
+            style={{ color: "var(--text-color)", padding: "8px" }}
+          >
+            Choose an other image
+          </label>
           <input
             type="file"
             id="file"
             name="file"
             accept="image/png, image/jpeg"
+            style={{ padding: "8px" }}
           />
         </section>
       </fieldset>
