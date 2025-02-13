@@ -44,13 +44,21 @@
   padding: 0;
   list-style-type: none;
   box-sizing: border-box;
-  color: var(---accent-color-1);
 }
 
 body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   background: var(--primary-color);
+  color: var(--text-color);
+}
+
+main {
+  background: var(--primary-color);
+}
+
+p {
+  color: var(--text-color);
 }
 
 .light {
@@ -71,14 +79,18 @@ body {
   --secondary-color: #131313;
   --tertiary-color: #1c1e1f;
   --text-color: #e6dbe3;
-  --accent-color-1: #fc666a;
-  --accent-color-2: #fc8f70;
+  --accent-color-1: #f8f8f8;
+  --accent-color-2: #ac8fd3;
   --accent-color-3: #49ad7b;
   --shadow-color: rgb(0 0 0 / 90%);
 }
 
 h1 {
   color: var(--accent-color-2);
+}
+
+h2 {
+  color: var(--accent-color-1);
 }
 
 a {
